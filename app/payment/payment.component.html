@@ -1,0 +1,385 @@
+
+<div class="impact">
+	<div class="text">
+		<p>Annual Financial Impact</p>
+		<h2 class="annual_financial_impact">$0.00</h2>
+	</div>
+</div>
+
+
+<div id="pay-3" class="col-md-12 main_sec scrollbox force-overflow">
+	<div class="col-md-6 col-sm-6 payment pr10">
+		<div style="width:50%" class="col-md-6 col-sm-6">
+			<h2 class="first_heading">Current Payment Mix</h2>	
+			<div id="current-pie" style="height: 200px; width: 245px; margin: 0 auto"><p-chart type="pie" [data]="data"></p-chart></div>
+		</div>
+		<div style="width:50%" class="col-md-6 col-sm-6">
+			<h2 class="first_heading">Future Payment Mix</h2>
+			<div id="future-pie" style="height: 200px; width: 245px; margin: 0 auto"></div>
+		</div>
+	</div>
+
+	<div class="col-md-6 col-sm-6 payment pl10">
+		<div style="width:50%" class="col-md-6 col-sm-6">
+			<h2 class="first_heading">Current Payment Mix</h2>
+			<div class="cpm_amt_display total_current_cost"></div>
+			<div id="current-bar" style="width: 245px; height: 250px; margin: 0 auto"></div>
+		</div>
+		<div style="width:50%" class="col-md-6 col-sm-6">
+			<h2 class="first_heading">Future Payment Mix</h2>
+			<div class="fpm_amt_display total_future_cost"></div>
+			<div id="future-bar" style="width: 245px; height: 250px; margin: 0 auto"></div>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+	
+	<div class="col-md-6 col-sm-6 payment pr10">
+		<div aria-multiselectable="true" role="tablist" id="accordion6" class="panel-group">
+			<div class="panel panel-default">
+				<div role="tab" class="panel-heading">
+				<h2>
+					<a aria-controls="collapse63" aria-expanded="false" href="#collapse63" data-parent="#accordion6" data-toggle="collapse" role="button" class="collapsed">
+							Current Payments Mix
+					</a>
+				</h2>
+				</div>
+				<div aria-labelledby="headingThree" role="tabpanel" class="panel-collapse collapse in" id="collapse63">
+					<div class="panel-body">
+						<table class="table table-hover">
+							<thead>
+									<tr class="top_tr">
+										<th>Payment Type</th>
+										<th>Volume</th>
+										<th>Cost</th>
+										<th>Total</th>
+									</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Checks</td>
+									<td class="current_check_volume">###</td>
+									<td class="current_check_cost">$$</td>
+									<td class="current_check_total">$$</td>
+								</tr>
+								<tr>
+									<td>ACH</td>
+									<td class="current_ach_volume">###</td>
+									<td class="current_ach_cost">$$</td>
+									<td class="current_ach_total">$$</td>
+								</tr>
+								<tr>
+									<td>Wires</td>
+									<td class="current_wire_volume">###</td>
+									<td class="current_wire_cost">$$</td>
+									<td class="current_wire_total">$$</td>
+								</tr>
+								<tr>
+									<td>Card</td>
+									<td class="current_card_volume">###</td>
+									<td class="current_card_cost">$$</td>
+									<td class="current_card_total">$$</td>
+								</tr>
+							</tbody>
+						</table> 
+					</div>
+				</div>
+			</div>
+			<div class="total_price">
+				<p>Summary of Payment Costs</p>
+				<h6 class="total_current_cost">$0.00</h6>
+			</div>
+		</div>
+	</div>  
+
+
+
+
+	<div class="col-md-6 col-sm-6 payment pl10">
+
+		<div aria-multiselectable="true" role="tablist" id="accordion7" class="panel-group">
+			<div class="panel panel-default">
+				<div role="tab" class="panel-heading">
+					<h2>
+						<a aria-controls="collapse71" aria-expanded="true" href="#collapse71" data-parent="#accordion7" data-toggle="collapse" role="button" class="collapsed">
+								Future Payments Mix
+						</a>
+					</h2>
+				</div>
+				<div aria-labelledby="headingOne" role="tabpanel" class="panel-collapse collapse in" id="collapse71">
+					<div class="panel-body panel-body1">
+						<table class="table table-hover">
+							<thead>
+									<tr class="top_tr">
+										<th>Payment Type</th>
+										<th>Volume</th>
+										<th>Cost</th>
+										<th>Total</th>
+									</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Checks</td>
+									<td class="future_check_volume">###</td>
+									<td class="future_check_cost">$$</td>
+									<td class="future_check_total">$$</td>
+								</tr>
+								<tr>
+									<td>ACH</td>
+									<td class="future_ach_volume">###</td>
+									<td class="future_ach_cost">$$</td>
+									<td class="future_ach_total">$$</td>
+								</tr>
+								<tr>
+									<td>Wires</td>
+									<td class="future_wire_volume">###</td>
+									<td class="future_wire_cost">$$</td>
+									<td class="future_wire_total">$$</td>
+								</tr>
+								<tr>
+									<td>Card</td>
+									<td class="future_card_volume">###</td>
+									<td class="future_card_cost">$$</td>
+									<td class="future_card_total">$$</td>
+								</tr>
+							</tbody>
+						</table> 
+
+
+					</div>
+				</div>
+			</div>
+			<div class="total_price">
+				<p>Summary of Payment Costs</p>
+				<h6 class="total_future_cost">$0.00</h6>
+			</div>
+
+		</div>
+
+	</div>
+</div>
+
+<script type="text/javascript" language="javascript">
+
+    $('#current-pie').highcharts({
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie',
+			spacingRight:0,
+			spacingLeft:0
+        },
+        title: {
+            text: false
+        },
+        tooltip: {
+            pointFormat: '<b>{point.percentage:.1f}%</b>'
+        },
+        legend:{
+			width:250,
+			itemStyle:{ "fontSize": "10px" },
+			itemDistance: 7
+        },
+        exporting:false,
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: false,
+                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                    style: {
+                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                    }
+                },
+                showInLegend: true
+            }
+        },
+        colors: ['#0094C2','#932763','#E36935','#007A45'],
+        series: [{
+            name: 'Current Spend',
+            colorByPoint: true,
+            data: [{
+                name: 'Check',
+                y: 56.33
+            }, {
+                name: 'ACH',
+                y: 24.03
+            }, {
+                name: 'Wire',
+                y: 10.38
+            }, {
+                name: 'Card',
+                y: 4.77
+            }]
+        }]
+    });
+	
+	
+	
+    $('#future-pie').highcharts({
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie',
+			spacingRight:0,
+			spacingLeft:0
+        },
+        title: {
+            text: false
+        },
+        tooltip: {
+            pointFormat: '<b>{point.percentage:.1f}%</b>'
+        },
+        legend:{
+			width:250,
+			itemStyle:{ "fontSize": "10px" },
+			itemDistance: 7
+        },
+        exporting:false,
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: false,
+                    format: '<b>{series.name}</b>: {point.percentage:.1f} %',
+                    style: {
+                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                    }
+                },
+                showInLegend: true
+            }
+        },
+        colors: ['#0094C2','#932763','#E36935','#007A45'],
+        series: [{
+            name: 'Future Spend',
+            colorByPoint: true,
+            data: [{
+					name: 'Check',
+					y: 56.33
+				}, {
+					name: 'ACH',
+					y: 24.03
+				}, {
+					name: 'Wire',
+					y: 10.38
+				}, {
+					name: 'Card',
+					y: 4.77
+				}]
+        }]
+    });	
+	
+	
+	
+
+	
+	$('#current-bar').highcharts({
+        chart: {
+            type: 'column',
+			spacingRight:30,
+			spacingLeft:0
+        },
+		
+        title: {
+            text: false
+        },
+        exporting:false,
+        tooltip: {
+            pointFormat: '<span style="color:{series.color}">{series.name}</span>: ({point.percentage:.0f}%)<br/>',
+            shared: true
+        },
+        legend:{
+			itemStyle:{ "fontSize": "10px" },
+			itemDistance: 10,
+			align:"right",
+			layout: "vertical",
+			verticalAlign: "middle"
+        },
+        xAxis: {
+            visible:false
+        },
+        yAxis: {
+			visible:false
+        },
+        plotOptions: {
+            column: {
+                stacking: 'percent'
+            }
+        },
+		colors: ['#0094C2','#932763','#E36935','#007A45'],
+        series: [{
+            name: 'Check',
+            data: [38]
+        }, {
+            name: 'ACH',
+            data: [30]
+        }, {
+            name: 'Wire',
+            data: [2]
+        }, {
+            name: 'Card',
+            data: [30]
+        }]
+    });
+
+	
+	$('#future-bar').highcharts({
+        chart: {
+            type: 'column',
+			spacingRight:30,
+			spacingLeft:0	
+        },
+		
+        title: {
+            text: false
+        },
+        exporting:false,
+        tooltip: {
+            pointFormat: '<span style="color:{series.color}">{series.name}</span>: ({point.percentage:.0f}%)<br/>',
+            shared: true
+        },
+        legend:{
+			itemStyle:{ "fontSize": "10px" },
+			itemDistance: 20,
+			align:"right",
+			layout: "vertical",
+			verticalAlign: "middle"
+        },
+        xAxis: {
+            visible:false
+        },
+        yAxis: {
+			visible:false
+        },
+        plotOptions: {
+            column: {
+                stacking: 'percent'
+            }
+        },
+		colors: ['#0094C2','#932763','#E36935','#007A45'],
+        series: [{
+            name: 'Check',
+            data: [38]
+        }, {
+            name: 'ACH',
+            data: [30]
+        }, {
+            name: 'Wire',
+            data: [2]
+        }, {
+            name: 'Card',
+            data: [30]
+        }]
+    });	
+
+
+	$('.scrollbox1').enscroll({
+		showOnHover: false,
+		verticalTrackClass: 'track1',
+		verticalHandleClass: 'handle1'
+	});
+	
+</script>
