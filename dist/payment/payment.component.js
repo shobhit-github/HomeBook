@@ -13,22 +13,37 @@ var core_1 = require("@angular/core");
 var PaymentComponent = (function () {
     function PaymentComponent() {
         this.data = {
-            labels: ['A', 'B', 'C'],
+            labels: ['Check', 'ACH', 'Wire', 'Card'],
             datasets: [
                 {
-                    data: [300, 50, 100],
+                    data: [300, 50, 100, 100],
                     backgroundColor: [
-                        "#FF6384",
-                        "#36A2EB",
-                        "#FFCE56"
-                    ],
-                    hoverBackgroundColor: [
-                        "#FF6384",
-                        "#36A2EB",
-                        "#FFCE56"
+                        "#0393C7",
+                        "#932763",
+                        "#E36935",
+                        "#007A45"
                     ]
                 }
             ]
+        };
+        this.pieOptions = {
+            title: {
+                fullWidth: false
+            },
+            legend: {
+                position: 'bottom',
+                labels: {
+                    boxWidth: 20,
+                    fontColor: "#000"
+                }
+            }
+        };
+        this.barOptions = {
+            scales: {
+                xAxes: [{
+                        stacked: true
+                    }]
+            }
         };
     }
     return PaymentComponent;
