@@ -10,10 +10,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var payment_model_1 = require("../shared/models/payment.model");
 var SidebarComponent = (function () {
     function SidebarComponent() {
+        this.payment = new payment_model_1.Payment();
     }
-    SidebarComponent.prototype.currentAnnual = function (event, vtype) {
+    SidebarComponent.prototype.getCalculation = function () {
+        console.log();
     };
     return SidebarComponent;
 }());

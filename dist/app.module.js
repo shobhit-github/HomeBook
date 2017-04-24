@@ -15,6 +15,8 @@ var payment_component_1 = require("./payment/payment.component");
 var result_component_1 = require("./result/result.component");
 var header_component_1 = require("./elements/header.component");
 var primeng_1 = require("primeng/primeng");
+var currency_pipes_1 = require("./shared/pipes/currency.pipes");
+var symbol_pipes_1 = require("./shared/pipes/symbol.pipes");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -34,7 +36,9 @@ AppModule = __decorate([
             sidebar_component_1.SidebarComponent,
             header_component_1.HeaderComponent,
             payment_component_1.PaymentComponent,
-            result_component_1.ResultComponent
+            result_component_1.ResultComponent,
+            currency_pipes_1.CurrencyPipe,
+            symbol_pipes_1.SymbolPipe
         ],
         bootstrap: [app_component_1.AppComponent]
     })

@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import { Payment } from '../shared/models/payment.model';
 
 
 @Component({
@@ -8,11 +9,15 @@ import {Component} from '@angular/core';
 })
 export class SidebarComponent {
 
+    payment: Payment = new Payment();
+
     constructor() {
 
     }
 
-    currentAnnual(event, vtype) {
 
+    public getCalculation() {
+
+        console.log();
     }
 }

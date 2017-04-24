@@ -7,6 +7,8 @@ import { PaymentComponent } from './payment/payment.component';
 import { ResultComponent } from './result/result.component';
 import { HeaderComponent } from './elements/header.component';
 import { SliderModule, InputMaskModule, ChartModule } from 'primeng/primeng';
+import { CurrencyPipe } from './shared/pipes/currency.pipes';
+import { SymbolPipe } from './shared/pipes/symbol.pipes';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { SliderModule, InputMaskModule, ChartModule } from 'primeng/primeng';
     SidebarComponent,
     HeaderComponent,
     PaymentComponent,
-    ResultComponent
+    ResultComponent,
+    CurrencyPipe,
+    SymbolPipe
   ],
   bootstrap: [ AppComponent ]
 })

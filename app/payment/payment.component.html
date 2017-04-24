@@ -8,27 +8,27 @@
 
 
 <div id="pay-3" class="col-md-12 main_sec scrollbox force-overflow">
-	<div class="col-md-6 col-sm-6 payment pr10">
-		<div class="col-md-12 col-sm-12">
+	<div class="col-md-12 col-sm-12 payment pr10">
+		<div class="col-md-6 col-sm-6">
 			<h2 class="first_heading">Current Payment Mix</h2>	
-			<div id="current-pie" style="height: 200px; width: 100%; margin: 0 auto"><p-chart type="pie" [data]="data" [options]="pieOptions"></p-chart></div>
+			<div id="current-pie" style="height: 200px; width: 100%; margin: 0 auto"><p-chart [width]="200" [height]="200" type="pie" [data]="pieData" [options]="pieOptions"></p-chart></div>
 		</div>
-		<div class="col-md-12 col-sm-12">
+		<div class="col-md-6 col-sm-6">
 			<h2 class="first_heading">Future Payment Mix</h2>
-			<div id="future-pie" style="height: 200px; width: 100%; margin: 0 auto"><p-chart type="bar" [data]="data" [options]="barOptions"></p-chart></div>
+			<div id="future-pie" style="height: 200px; width: 100%; margin: 0 auto"><p-chart [width]="200" [height]="200" type="pie" [data]="pieData" [options]="pieOptions"></p-chart></div>
 		</div>
 	</div>
 
-	<div class="col-md-6 col-sm-6 payment pl10">
-		<div class="col-md-12 col-sm-12">
+	<div class="col-md-12 col-sm-12 payment pl10">
+		<div class="col-md-6 col-sm-6">
 			<h2 class="first_heading">Current Payment Mix</h2>
 			<div class="cpm_amt_display total_current_cost"></div>
-			<div id="current-bar" style="width: 100%; height: 250px; margin: 0 auto"><p-chart type="pie" [data]="data" [options]="pieOptions"></p-chart></div>
+			<div id="current-bar" style="width: 100%; height: 250px; margin: 0 auto"><p-chart type="bar" [data]="barData" [options]="barOptions"></p-chart></div>
 		</div>
-		<div class="col-md-12 col-sm-12">
+		<div class="col-md-6 col-sm-6">
 			<h2 class="first_heading">Future Payment Mix</h2>
 			<div class="fpm_amt_display total_future_cost"></div>
-			<div id="future-bar" style="width: 100%; height: 250px; margin: 0 auto"><p-chart type="bar" [data]="data"></p-chart></div>
+			<div id="future-bar" style="width: 100%; height: 250px; margin: 0 auto"><p-chart type="bar" [data]="barData" [options]="barOptions"></p-chart></div>
 		</div>
 	</div>
 	<div class="clearfix"></div>
@@ -47,12 +47,12 @@
 					<div class="panel-body">
 						<table class="table table-hover">
 							<thead>
-									<tr class="top_tr">
-										<th>Payment Type</th>
-										<th>Volume</th>
-										<th>Cost</th>
-										<th>Total</th>
-									</tr>
+								<tr class="top_tr">
+									<th>Payment Type</th>
+									<th>Volume</th>
+									<th>Cost</th>
+									<th>Total</th>
+								</tr>
 							</thead>
 							<tbody>
 								<tr>
