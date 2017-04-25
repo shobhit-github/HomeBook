@@ -24,54 +24,54 @@
 					<h2 class="head-cal">CHECKS</h2>
 
 					<label>Current Annual Volume</label>
-					<input [(ngModel)]="payment.checks_current_vol" type="text" class="type_field" placeholder="Type Field" />
+					<input [(ngModel)]="payment.checks_current_vol" (keyup)="getCalculation()" type="text" class="type_field" placeholder="Type Field" />
 
 					<div class="slider-grp">
 						<label>Current Avg. Cost</label>
-						<input type="text" class="price price3 slider-textbox" [ngModel]="payment.checks_current_avg_cost | currency: 'dollar'" (ngModelChange)="payment.checks_current_avg_cost=$event" placeholder="$0.00"  />
+						<input type="text" (keyup)="getCalculation()" class="price price3 slider-textbox" [ngModel]="payment.checks_current_avg_cost | currency: 'dollar'" (ngModelChange)="payment.checks_current_avg_cost=$event" placeholder="$0.00"  />
 						<p-slider [min]="0" [max]="30" (onChange)="getCalculation()" [(ngModel)]="payment.checks_current_avg_cost"></p-slider>
 					</div>
 
 					<div class="slider-grp">
 						<label>Future Avg. Cost</label>
-						<input type="text"  placeholder="$0.00" class="price32 slider-textbox" [ngModel]="payment.checks_future_avg_cost | currency: 'dollar'" (ngModelChange)="payment.checks_future_avg_cost=$event" />
-						<p-slider class="slider-32" [(ngModel)]="payment.checks_future_avg_cost"></p-slider>
+						<input type="text" (keyup)="getCalculation()" placeholder="$0.00" class="price32 slider-textbox" [ngModel]="payment.checks_future_avg_cost | currency: 'dollar'" (ngModelChange)="payment.checks_future_avg_cost=$event" />
+						<p-slider class="slider-32" (onChange)="getCalculation()" [(ngModel)]="payment.checks_future_avg_cost"></p-slider>
 					</div>
 
 					<h2 class="head-cal">ACH</h2>
 
 					<label>Current Annual Volume</label>
-					<input [(ngModel)]="payment.ach_current_vol" type="text" class="type_field" placeholder="Type Field">
+					<input [(ngModel)]="payment.ach_current_vol" (keyup)="getCalculation()" type="text" class="type_field" placeholder="Type Field">
 
 					<div class="slider-grp">
 						<label>Avg. Cost</label>
-						<input type="text" class="price33 slider-textbox" placeholder="$0.00" [ngModel]="payment.ach_current_avg_cost | currency: 'dollar'" (ngModelChange)="payment.ach_current_avg_cost=$event" />
-						<p-slider class="slider-33" [(ngModel)]="payment.ach_current_avg_cost"></p-slider>
+						<input (keyup)="getCalculation()" type="text" class="price33 slider-textbox" placeholder="$0.00" [ngModel]="payment.ach_current_avg_cost | currency: 'dollar'" (ngModelChange)="payment.ach_current_avg_cost=$event" />
+						<p-slider class="slider-33" (onChange)="getCalculation()" [(ngModel)]="payment.ach_current_avg_cost"></p-slider>
 					</div>
 
 					<h2 class="head-cal">CARD</h2>
 
 					<div class="col-sm-6 left_input">
 						<label>Current Annual Volume</label>
-						<input [(ngModel)]="payment.cards_current_vol" type="text" class="type_field " placeholder="Type Field">
+						<input (keyup)="getCalculation()" [(ngModel)]="payment.cards_current_vol" type="text" class="type_field " placeholder="Type Field">
 					</div>
 
 					<div class="col-sm-6 right_input">
 						<label>Avg Transaction Size</label>
-						<input [(ngModel)]="payment.avg_trsn_size" type="text" class="type_field" placeholder="Type Field">
+						<input (keyup)="getCalculation()" [(ngModel)]="payment.avg_trsn_size" type="text" class="type_field" placeholder="Type Field">
 					</div>
 					<div class="clearfix"></div>
 
 					<div class="slider-grp">
 						<label>Avg. Cost</label>
-						<input type="text" class="price37 slider-textbox" [ngModel]="payment.card_avg_cost | currency: 'dollar'" placeholder="$0.00" (ngModelChange)="payment.card_avg_cost=$event"  />
-						<p-slider class="slider-37" [(ngModel)]="payment.card_avg_cost"></p-slider>
+						<input (keyup)="getCalculation()" type="text" class="price37 slider-textbox" [ngModel]="payment.card_avg_cost | currency: 'dollar'" placeholder="$0.00" (ngModelChange)="payment.card_avg_cost=$event"  />
+						<p-slider (onChange)="getCalculation()" class="slider-37" [(ngModel)]="payment.card_avg_cost"></p-slider>
 					</div>
 
 					<div class="slider-grp">
 						<label>Card Rev Share % Rate</label>
-						<input type="text" class="price39 slider-textbox-per" [ngModel]="payment.card_rev_share_rate | symbol: 'percent'" placeholder="0.00%" (ngModelChange)="payment.card_rev_share_rate=$event" />
-						<p-slider class="slider-39" [(ngModel)]="payment.card_rev_share_rate"></p-slider>
+						<input (keyup)="getCalculation()" type="text" class="price39 slider-textbox-per" [ngModel]="payment.card_rev_share_rate | symbol: 'percent'" placeholder="0.00%" (ngModelChange)="payment.card_rev_share_rate=$event" />
+						<p-slider (onChange)="getCalculation()" class="slider-39" [(ngModel)]="payment.card_rev_share_rate"></p-slider>
 					</div>
 
 
@@ -79,12 +79,12 @@
 					<h2 class="head-cal">WIRES</h2>
 
 					<label>Current Annual Volume</label>
-					<input [(ngModel)]="payment.wires_current_vol" type="text" class="type_field" placeholder="Type Field">
+					<input (keyup)="getCalculation()" [(ngModel)]="payment.wires_current_vol" type="text" class="type_field" placeholder="Type Field">
 
 					<div class="slider-grp">
 						<label>Avg. Cost</label>
-						<input type="text" [ngModel]="payment.wires_current_avg_cost | currency: 'dollar'" placeholder="$0.00" class="price35 slider-textbox" (ngModelChange)="payment.wires_current_avg_cost=$event" />
-						<p-slider class="slider-35" [(ngModel)]="payment.wires_current_avg_cost"></p-slider>
+						<input (keyup)="getCalculation()" type="text" [ngModel]="payment.wires_current_avg_cost | currency: 'dollar'" placeholder="$0.00" class="price35 slider-textbox" (ngModelChange)="payment.wires_current_avg_cost=$event" />
+						<p-slider (onChange)="getCalculation()" class="slider-35" [(ngModel)]="payment.wires_current_avg_cost"></p-slider>
 					</div>
 
 
@@ -99,13 +99,13 @@
 								<label>Checks</label>
 								<input type="hidden" class="price41 slider-textbox" value=25 [(ngModel)]="payment.future_check_mix"/>
 							</div>
-							<p-slider class="slider-41" [(ngModel)]="payment.future_check_mix"></p-slider>
+							<p-slider class="slider-41" (onChange)="getCalculation()"  [(ngModel)]="payment.future_check_mix"></p-slider>
 
 							<div class="slider-grp">
 								<label>Card</label>
 								<input type="hidden" class="price38 slider-textbox" value=25 [(ngModel)]="payment.future_card_mix"  />
 							</div>
-							<p-slider class="slider-38" [(ngModel)]="payment.future_card_mix"></p-slider>
+							<p-slider class="slider-38" (onChange)="getCalculation()"  [(ngModel)]="payment.future_card_mix"></p-slider>
 						</div>
 
 						<div class="col-sm-12 right_input">
@@ -113,13 +113,13 @@
 								<label>ACH</label>
 								<input type="hidden" class="price36 slider-textbox"  value=25 [(ngModel)]="payment.future_ach_mix"  />
 							</div>
-							<p-slider class="slider-36" [(ngModel)]="payment.future_ach_mix"></p-slider>
+							<p-slider class="slider-36" (onChange)="getCalculation()"  [(ngModel)]="payment.future_ach_mix"></p-slider>
 
 							<div class="slider-grp">
 								<label>Wire</label>
 								<input type="hidden" class="price40 slider-textbox"  value=25 [(ngModel)]="payment.future_wire_mix"  />
 							</div>
-							<p-slider class="slider-40" [(ngModel)]="payment.future_wire_mix"></p-slider>
+							<p-slider class="slider-40" (onChange)="getCalculation()"  [(ngModel)]="payment.future_wire_mix"></p-slider>
 						</div>
 
 					</div>

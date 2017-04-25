@@ -10,13 +10,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var payment_model_1 = require("../shared/models/payment.model");
+var payment_service_1 = require("../shared/services/payment.service");
 var SidebarComponent = (function () {
-    function SidebarComponent() {
-        this.payment = new payment_model_1.Payment();
+    function SidebarComponent(Payment) {
+        this.Payment = Payment;
+        this.payment = {};
     }
     SidebarComponent.prototype.getCalculation = function () {
-        console.log();
+        this.Payment.generateFinancialData(this.payment, function (response) {
+            console.log(response);
+        });
     };
     return SidebarComponent;
 }());
@@ -24,9 +27,10 @@ SidebarComponent = __decorate([
     core_1.Component({
         selector: 'sidebar',
         templateUrl: './app/elements/sidebar.component.html',
-        styleUrls: ['./app/elements/sidebar.component.css']
+        styleUrls: ['./app/elements/sidebar.component.css'],
+        providers: [payment_service_1.PaymentService]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [payment_service_1.PaymentService])
 ], SidebarComponent);
 exports.SidebarComponent = SidebarComponent;
 //# sourceMappingURL=sidebar.component.js.map

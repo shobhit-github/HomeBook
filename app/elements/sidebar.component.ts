@@ -1,23 +1,26 @@
-import {Component} from '@angular/core';
-import { Payment } from '../shared/models/payment.model';
+import { Component } from '@angular/core';
+import { PaymentService } from '../shared/services/payment.service';
 
 
 @Component({
     selector: 'sidebar',
     templateUrl: './app/elements/sidebar.component.html',
-    styleUrls: ['./app/elements/sidebar.component.css']
+    styleUrls: ['./app/elements/sidebar.component.css'],
+    providers: [PaymentService]
 })
 export class SidebarComponent {
 
-    payment: Payment = new Payment();
+    payment:object = {};
 
-    constructor() {
+    constructor(private Payment: PaymentService) {
 
     }
 
 
-    public getCalculation() {
+    getCalculation() {
 
-        console.log();
+        this.Payment.generateFinancialData(this.payment, function (response) {
+            console.log(response);
+        });
     }
 }
