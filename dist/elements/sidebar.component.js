@@ -11,10 +11,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var payment_service_1 = require("../shared/services/payment.service");
+var payment_model_1 = require("../shared/models/payment.model");
 var SidebarComponent = (function () {
     function SidebarComponent(Payment) {
         this.Payment = Payment;
-        this.payment = {};
+        this.payment = new payment_model_1.PaymentModel();
     }
     SidebarComponent.prototype.getCalculation = function () {
         this.Payment.generateFinancialData(this.payment, function (response) {

@@ -11,14 +11,25 @@ export class PaymentService {
 
     }
 
+    private clearInputs(obj) {
+
+        let input:object = {};
+
+        for (let key in obj) {
+
+            input[key] = (!obj[key] ? 0 : parseFloat(obj[key]));
+        }
+        return input;
+    }
+
     private total_current_annual_volume(data) {
 
-        return (data.checks_current_vol + data.ach_current_vol + data.wires_current_vol + data.cards_current_vol);
+        return ( data.checks_current_vol + data.ach_current_vol + data.wires_current_vol + data.cards_current_vol );
     }
 
     private total_future_annual_mix(data) {
 
-        return (data.future_check_mix + data.future_ach_mix + data.future_wire_mix + data.future_card_mix);
+        return ( data.future_check_mix + data.future_ach_mix + data.future_wire_mix + data.future_card_mix );
     }
 
 
@@ -107,7 +118,9 @@ export class PaymentService {
 
     generateFinancialData(inputs, callback) {
 
-        let data = this.future_current_evaluation(inputs);
+        let values = this.clearInputs(inputs);
+
+        let data = this.future_current_evaluation(values);
 
         data['final_total'] = {
 

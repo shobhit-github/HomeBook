@@ -11,6 +11,7 @@ import { CurrencyPipe } from './shared/pipes/currency.pipes';
 import { SymbolPipe } from './shared/pipes/symbol.pipes';
 
 
+
 @NgModule({
   imports: [ 
     BrowserModule,

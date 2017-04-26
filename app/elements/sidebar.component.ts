@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { PaymentService } from '../shared/services/payment.service';
+import { PaymentModel } from '../shared/models/payment.model';
 
 
 @Component({
@@ -10,7 +11,7 @@ import { PaymentService } from '../shared/services/payment.service';
 })
 export class SidebarComponent {
 
-    payment:object = {};
+    payment:PaymentModel = new PaymentModel();
 
     constructor(private Payment: PaymentService) {
 
