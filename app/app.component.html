@@ -10,19 +10,13 @@
                 <header></header>
                 <!--/.nav-tabs.content-tabs -->
 
-                <div class="inner_Sec toggled" id="wrapper">
+                <div class="inner_Sec toggled toggle-wrapper" id="wrapper">
                     <!-- Sidebar -->
                     <sidebar class="outer_sidebar"></sidebar>
                     <!-- /#sidebar-wrapper -->
                     <div class="tab-content">
 
-                        <payment-data class="outerIntro tab-pane fade in active" id="payment_data">
-                            <!--	Check Data Module  -->
-                        </payment-data>
-
-                        <result class="outerIntro tab-pane fade" id="result">
-                            <!--	Result Module  -->
-                        </result>
+                        <router-outlet class="outerIntro tab-pane fade"></router-outlet>
 
                     </div><!--/.tab-content -->
 

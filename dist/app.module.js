@@ -13,10 +13,18 @@ var app_component_1 = require("./app.component");
 var sidebar_component_1 = require("./elements/sidebar.component");
 var payment_component_1 = require("./payment/payment.component");
 var result_component_1 = require("./result/result.component");
+var not_found_component_1 = require("./not-found.component");
 var header_component_1 = require("./elements/header.component");
 var primeng_1 = require("primeng/primeng");
 var currency_pipes_1 = require("./shared/pipes/currency.pipes");
 var symbol_pipes_1 = require("./shared/pipes/symbol.pipes");
+var router_1 = require("@angular/router");
+var appRoutes = [
+    { path: 'result', component: result_component_1.ResultComponent },
+    { path: 'payment', component: payment_component_1.PaymentComponent },
+    { path: '', redirectTo: '/payment', pathMatch: 'full' },
+    { path: '**', component: not_found_component_1.PageNotFoundComponent }
+];
 var AppModule = (function () {
     function AppModule() {
     }
@@ -29,11 +37,13 @@ AppModule = __decorate([
             forms_1.FormsModule,
             primeng_1.SliderModule,
             primeng_1.InputMaskModule,
-            primeng_1.ChartModule
+            primeng_1.ChartModule,
+            router_1.RouterModule.forRoot(appRoutes)
         ],
         declarations: [
             app_component_1.AppComponent,
             sidebar_component_1.SidebarComponent,
+            not_found_component_1.PageNotFoundComponent,
             header_component_1.HeaderComponent,
             payment_component_1.PaymentComponent,
             result_component_1.ResultComponent,
