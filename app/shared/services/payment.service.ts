@@ -119,7 +119,7 @@ export class PaymentService {
     generateFinancialData(inputs, callback) {
 
 
-        let values = this.clearInputs(inputs.payment);
+        let values = this.clearInputs(inputs);
         let data = this.future_current_evaluation(values);
 
         data['final_total'] = {

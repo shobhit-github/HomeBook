@@ -15,11 +15,12 @@ var payment_model_1 = require("../shared/models/payment.model");
 var SidebarComponent = (function () {
     function SidebarComponent(Payment) {
         this.Payment = Payment;
-        this.payment = new payment_model_1.PaymentModel();
+        this.payment = new payment_model_1.PaymentModel().payment;
         this.paymentData = new core_1.EventEmitter();
     }
     SidebarComponent.prototype.getCalculation = function () {
         this.Payment.generateFinancialData(this.payment, function (response) {
+            console.log(response);
             //    this.paymentData.emit( response );
         });
     };

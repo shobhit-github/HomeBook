@@ -12,7 +12,7 @@ import { PaymentModel } from '../shared/models/payment.model';
 })
 export class SidebarComponent {
 
-    payment:PaymentModel = new PaymentModel();
+    payment:object = new PaymentModel().payment;
     paymentData:object = new EventEmitter<object>();
 
 
@@ -21,8 +21,8 @@ export class SidebarComponent {
     }
 
     getCalculation() {
-
         this.Payment.generateFinancialData(this.payment, function (response:object) {
+            console.log(response);
          //    this.paymentData.emit( response );
         });
     }
