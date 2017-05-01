@@ -16,25 +16,28 @@ var SidebarComponent = (function () {
     function SidebarComponent(Payment) {
         this.Payment = Payment;
         this.payment = new payment_model_1.PaymentModel().payment;
-        this.paymentData = new core_1.EventEmitter();
+        this.displayData = new core_1.EventEmitter();
     }
     SidebarComponent.prototype.getCalculation = function () {
+        var _this = this;
         this.Payment.generateFinancialData(this.payment, function (response) {
-            console.log(response);
-            //    this.paymentData.emit( response );
+            _this.displayData.emit(response);
         });
     };
     SidebarComponent.prototype.resetData = function () {
     };
     return SidebarComponent;
 }());
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", core_1.EventEmitter)
+], SidebarComponent.prototype, "displayData", void 0);
 SidebarComponent = __decorate([
     core_1.Component({
         selector: 'sidebar',
         templateUrl: './app/elements/sidebar.component.html',
         styleUrls: ['./app/elements/sidebar.component.css'],
-        providers: [payment_service_1.PaymentService],
-        outputs: ['financeData : paymentData'],
+        providers: [payment_service_1.PaymentService]
     }),
     __metadata("design:paramtypes", [payment_service_1.PaymentService])
 ], SidebarComponent);

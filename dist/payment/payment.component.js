@@ -12,7 +12,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var payment_service_1 = require("../shared/services/payment.service");
 var PaymentComponent = (function () {
-    //@Input('financeData') data: object;
     function PaymentComponent(Payment) {
         this.Payment = Payment;
         this.pieData = {
@@ -86,6 +85,9 @@ var PaymentComponent = (function () {
             }
         };
     }
+    PaymentComponent.prototype.handleD = function ($event) {
+        console.log($event);
+    };
     return PaymentComponent;
 }());
 PaymentComponent = __decorate([

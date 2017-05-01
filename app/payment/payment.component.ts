@@ -1,6 +1,6 @@
-import { Component, Input, EventEmitter } from '@angular/core';
+import { Component } from '@angular/core';
 import { PaymentService } from '../shared/services/payment.service';
-import { SidebarComponent } from '../elements/sidebar.component';
+
 
 
 @Component({
@@ -16,7 +16,6 @@ export class PaymentComponent {
     barData: any;
     barOptions: any;
 
-    //@Input('financeData') data: object;
 
     constructor(private Payment: PaymentService) {
 
@@ -101,7 +100,8 @@ export class PaymentComponent {
 
     }
 
-
-
+    handleD($event) {
+        console.log($event);
+    }
 
 }

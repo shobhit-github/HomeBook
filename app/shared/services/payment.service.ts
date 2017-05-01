@@ -7,6 +7,8 @@ import { Injectable } from "@angular/core";
 
 export class PaymentService {
 
+    public data: object = {};
+
     constructor() {
 
     }
@@ -126,8 +128,8 @@ export class PaymentService {
 
             'total_current_cost'	:	this.total_cost(data, 'CURRENT'),
             'total_future_cost'		:	this.total_cost(data, 'FUTURE'),
-            'current_avg_trsn_charge':	(this.total_cost(data, 'CURRENT') / this.total_current_annual_volume(data)),
-            'future_avg_trsn_charge':	(this.total_cost(data, 'FUTURE') / this.total_current_annual_volume(data)),
+            'current_avg_trsn_charge':	(this.total_cost(data, 'CURRENT') / this.total_current_annual_volume(values)),
+            'future_avg_trsn_charge':	(this.total_cost(data, 'FUTURE') / this.total_current_annual_volume(values)),
 
             'total_annual_saving'	:	(this.total_cost(data, 'CURRENT') - this.total_cost(data, 'FUTURE')),
             'current_revenue_share'	:	this.revenue_share(data, 'CURRENT'),
@@ -137,6 +139,7 @@ export class PaymentService {
             'annual_fnancial_impact':	((this.total_cost(data, 'CURRENT') - this.total_cost(data, 'FUTURE')) + (this.revenue_share(data, 'FUTURE') - this.revenue_share(data, 'CURRENT')))
 
         };
+
 
         callback( data );
     }

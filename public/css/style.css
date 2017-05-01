@@ -1540,7 +1540,7 @@ h2.first_heading {
 }
 
 .toggle-wrapper .sec_two .inner_circle p {
-    font-size: 16px;
+    font-size: 15px;
     padding-top: 51px;
 }
 
@@ -1725,7 +1725,7 @@ label {
 
     .toggle-wrapper .second_tab {
         height: 593px;
-        margin: 20px 0 30px !important;
+        margin: 20px 0 0 30px !important;
         padding: 0 !important;
     }
 
@@ -1789,13 +1789,13 @@ label {
     }
 
     .toggle-wrapper .second_tab .top_price {
-        left: 7px;
+        left: 0px;
         top: 123px;
     }
 
     .toggle-wrapper .second_tab .bottom_price {
         bottom: 15px;
-        left: 7px;
+        left: -9px;
     }
 
     .impact {
