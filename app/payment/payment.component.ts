@@ -1,6 +1,6 @@
-import {Component, Input, OnChanges, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {PaymentService} from '../shared/services/payment.service';
-import {Router} from '@angular/router';
+
 
 
 @Component({
@@ -9,7 +9,7 @@ import {Router} from '@angular/router';
     styleUrls: ['./app/payment/payment.component.css'],
     providers: [PaymentService]
 })
-export class PaymentComponent implements OnInit, OnChanges {
+export class PaymentComponent implements OnInit {
 
     pieData: any;
     pieOptions: any;
@@ -20,9 +20,7 @@ export class PaymentComponent implements OnInit, OnChanges {
     @Input('displayData') value: object;
 
 
-    constructor(private payService: PaymentService,
-                private route: Router) {
-
+    constructor(private payService: PaymentService) {
 
         this.pieData = {
 
@@ -104,12 +102,12 @@ export class PaymentComponent implements OnInit, OnChanges {
 
     }
 
-    ngOnChanges() {
-        console.log(this.value);
-    }
 
     ngOnInit() {
-        console.log(this.value);
+        console.log(this.payService.getData());
+        this.payService.getData().subscribe(data => {
+            console.log( "ngInit", data );
+        })
     }
 
 

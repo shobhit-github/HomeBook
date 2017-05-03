@@ -21,7 +21,6 @@ export class SidebarComponent {
 
     getCalculation() {
         this.payService.generateFinancialData(this.payment, response => {
-
             this.displayData.emit( response );
         });
     }

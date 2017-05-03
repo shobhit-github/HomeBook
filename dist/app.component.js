@@ -15,6 +15,9 @@ var AppComponent = (function () {
     function AppComponent(payService) {
         this.payService = payService;
     }
+    AppComponent.prototype.setData = function (dataObject) {
+        this.payService.setData(dataObject);
+    };
     return AppComponent;
 }());
 AppComponent = __decorate([

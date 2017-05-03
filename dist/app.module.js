@@ -20,6 +20,7 @@ var currency_pipes_1 = require("./shared/pipes/currency.pipes");
 var symbol_pipes_1 = require("./shared/pipes/symbol.pipes");
 var router_1 = require("@angular/router");
 var app_routes_1 = require("./app.routes");
+var payment_service_1 = require("./shared/services/payment.service");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -45,6 +46,7 @@ AppModule = __decorate([
             currency_pipes_1.CurrencyPipe,
             symbol_pipes_1.SymbolPipe
         ],
+        providers: [payment_service_1.PaymentService],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);

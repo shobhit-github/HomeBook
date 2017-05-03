@@ -17,7 +17,9 @@ export class AppComponent {
 
   }
 
-
+  setData(dataObject) {
+    this.payService.setData(dataObject);
+  }
 
 
 }

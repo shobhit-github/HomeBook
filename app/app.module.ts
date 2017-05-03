@@ -12,7 +12,7 @@ import {CurrencyPipe} from './shared/pipes/currency.pipes';
 import {SymbolPipe} from './shared/pipes/symbol.pipes';
 import {RouterModule} from '@angular/router';
 import {APP_ROUTER_PROVIDERS} from "./app.routes";
-
+import {PaymentService} from "./shared/services/payment.service";
 
 
 @NgModule({
@@ -34,6 +34,7 @@ import {APP_ROUTER_PROVIDERS} from "./app.routes";
         CurrencyPipe,
         SymbolPipe
     ],
+    providers: [PaymentService],
     bootstrap: [AppComponent]
 })
 export class AppModule {
