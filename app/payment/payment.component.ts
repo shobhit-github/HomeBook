@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import { PaymentService } from '../shared/services/payment.service';
-
+import {Component, Input, OnChanges, OnInit} from '@angular/core';
+import {PaymentService} from '../shared/services/payment.service';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -9,7 +9,7 @@ import { PaymentService } from '../shared/services/payment.service';
     styleUrls: ['./app/payment/payment.component.css'],
     providers: [PaymentService]
 })
-export class PaymentComponent {
+export class PaymentComponent implements OnInit, OnChanges {
 
     pieData: any;
     pieOptions: any;
@@ -17,14 +17,19 @@ export class PaymentComponent {
     barOptions: any;
 
 
-    constructor(private Payment: PaymentService) {
+    @Input('displayData') value: object;
+
+
+    constructor(private payService: PaymentService,
+                private route: Router) {
+
 
         this.pieData = {
 
             labels: ['Check', 'ACH', 'Wire', 'Card'],
             datasets: [
                 {
-                    data: [100, 100, 100,150],
+                    data: [100, 100, 100, 150],
                     backgroundColor: [
                         "#0393C7",
                         "#932763",
@@ -36,19 +41,18 @@ export class PaymentComponent {
         };
 
         this.pieOptions = {
-            title:{
+            title: {
                 fullWidth: true
             },
             legend: {
                 position: 'bottom',
-                labels:{
-                    boxWidth:20,
-                    fontColor:"#000",
-                    fontSize:20
+                labels: {
+                    boxWidth: 20,
+                    fontColor: "#000",
+                    fontSize: 20
                 }
             }
         };
-
 
         this.barData = {
             labels: [''],
@@ -81,27 +85,32 @@ export class PaymentComponent {
 
         this.barOptions = {
             scales: {
-                xAxes:[{
-                    stacked:true,
-                    barPercentage:0.4
+                xAxes: [{
+                    stacked: true,
+                    barPercentage: 0.4
                 }],
-                yAxes:[{
-                    stacked:true
+                yAxes: [{
+                    stacked: true
                 }]
             },
-            legend:{
-                position:"right",
-                labels:{
-                    boxWidth:20,
-                    fontColor:"#000"
+            legend: {
+                position: "right",
+                labels: {
+                    boxWidth: 20,
+                    fontColor: "#000"
                 }
             }
         };
 
     }
 
-    handleD($event) {
-        console.log($event);
+    ngOnChanges() {
+        console.log(this.value);
     }
+
+    ngOnInit() {
+        console.log(this.value);
+    }
+
 
 }

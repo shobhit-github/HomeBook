@@ -11,9 +11,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var payment_service_1 = require("../shared/services/payment.service");
+var router_1 = require("@angular/router");
 var PaymentComponent = (function () {
-    function PaymentComponent(Payment) {
-        this.Payment = Payment;
+    function PaymentComponent(payService, route) {
+        this.payService = payService;
+        this.route = route;
         this.pieData = {
             labels: ['Check', 'ACH', 'Wire', 'Card'],
             datasets: [
@@ -85,11 +87,18 @@ var PaymentComponent = (function () {
             }
         };
     }
-    PaymentComponent.prototype.handleD = function ($event) {
-        console.log($event);
+    PaymentComponent.prototype.ngOnChanges = function () {
+        console.log(this.value);
+    };
+    PaymentComponent.prototype.ngOnInit = function () {
+        console.log(this.value);
     };
     return PaymentComponent;
 }());
+__decorate([
+    core_1.Input('displayData'),
+    __metadata("design:type", Object)
+], PaymentComponent.prototype, "value", void 0);
 PaymentComponent = __decorate([
     core_1.Component({
         selector: 'payment-data',
@@ -97,7 +106,8 @@ PaymentComponent = __decorate([
         styleUrls: ['./app/payment/payment.component.css'],
         providers: [payment_service_1.PaymentService]
     }),
-    __metadata("design:paramtypes", [payment_service_1.PaymentService])
+    __metadata("design:paramtypes", [payment_service_1.PaymentService,
+        router_1.Router])
 ], PaymentComponent);
 exports.PaymentComponent = PaymentComponent;
 //# sourceMappingURL=payment.component.js.map

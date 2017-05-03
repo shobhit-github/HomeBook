@@ -13,14 +13,14 @@ var core_1 = require("@angular/core");
 var payment_service_1 = require("../shared/services/payment.service");
 var payment_model_1 = require("../shared/models/payment.model");
 var SidebarComponent = (function () {
-    function SidebarComponent(Payment) {
-        this.Payment = Payment;
+    function SidebarComponent(payService) {
+        this.payService = payService;
         this.payment = new payment_model_1.PaymentModel().payment;
         this.displayData = new core_1.EventEmitter();
     }
     SidebarComponent.prototype.getCalculation = function () {
         var _this = this;
-        this.Payment.generateFinancialData(this.payment, function (response) {
+        this.payService.generateFinancialData(this.payment, function (response) {
             _this.displayData.emit(response);
         });
     };
@@ -30,7 +30,7 @@ var SidebarComponent = (function () {
 }());
 __decorate([
     core_1.Output(),
-    __metadata("design:type", core_1.EventEmitter)
+    __metadata("design:type", Object)
 ], SidebarComponent.prototype, "displayData", void 0);
 SidebarComponent = __decorate([
     core_1.Component({

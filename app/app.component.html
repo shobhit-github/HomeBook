@@ -12,12 +12,10 @@
 
                 <div class="inner_Sec toggled toggle-wrapper" id="wrapper">
                     <!-- Sidebar -->
-                    <sidebar class="outer_sidebar"></sidebar>
+                    <sidebar (displayData)="info = $event" class="outer_sidebar"></sidebar>
                     <!-- /#sidebar-wrapper -->
                     <div class="tab-content">
-
-                        <router-outlet class="outerIntro tab-pane fade"></router-outlet>
-
+                        <router-outlet (info)="info" class="outerIntro tab-pane fade"></router-outlet>
                     </div><!--/.tab-content -->
 
                 </div>

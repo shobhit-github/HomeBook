@@ -12,16 +12,17 @@ import { PaymentModel } from '../shared/models/payment.model';
 export class SidebarComponent {
 
     payment:object = new PaymentModel().payment;
-    @Output() displayData: EventEmitter<object> = new EventEmitter<object>();
+    @Output() displayData = new EventEmitter<object>();
 
 
-    constructor(public Payment: PaymentService) {
+    constructor(public payService: PaymentService) {
 
     }
 
     getCalculation() {
-        this.Payment.generateFinancialData(this.payment, (response:object) => {
-            this.displayData.emit ( response );
+        this.payService.generateFinancialData(this.payment, response => {
+
+            this.displayData.emit( response );
         });
     }
 

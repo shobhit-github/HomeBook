@@ -1,4 +1,5 @@
 import { Injectable } from "@angular/core";
+import {Subject} from "rxjs/Subject";
 
 
 
@@ -7,7 +8,7 @@ import { Injectable } from "@angular/core";
 
 export class PaymentService {
 
-    public data: object = {};
+    public paymentData: object;
 
     constructor() {
 
@@ -118,7 +119,7 @@ export class PaymentService {
     }
 
 
-    generateFinancialData(inputs, callback) {
+    generateFinancialData(inputs: object, callback) {
 
 
         let values = this.clearInputs(inputs);
@@ -140,11 +141,9 @@ export class PaymentService {
 
         };
 
-
-        callback( data );
+        this.paymentData = data;
+         callback( data );
     }
-    
-
 
 
 }
